@@ -1,0 +1,4 @@
+snowsql -f metric_sql_script > output
+CREDITS=$(awk '/CREDITS/{getline;print}' output)
+echo $CREDITS
+aws cloudwatch put-metric-data --metric-name Credits --namespace COMPUTE_WH --value $CREDITS

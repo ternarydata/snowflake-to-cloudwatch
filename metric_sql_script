@@ -1,0 +1,4 @@
+select sum(credits_used) as credits
+from snowflake.account_usage.warehouse_metering_history
+WHERE warehouse_name='COMPUTE_WH';
+
